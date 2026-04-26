@@ -1,0 +1,313 @@
+/* ============================================================
+   BOLD OVERLAY — only active when html[data-style="bold"]
+   Adds solid color blocks, hard edges, and confident shapes
+   while staying within the 5-color palette.
+   ============================================================ */
+
+/* Bold-mode-only decoration: hidden by default */
+.hero-block-copper, .hero-block-black { display: none; }
+html[data-style="bold"] .hero-block-copper,
+html[data-style="bold"] .hero-block-black { display: block; }
+
+html[data-style="bold"] {
+  /* Bigger, blockier radii for "shape" feel without going pill */
+  --radius-block: 0px;
+}
+
+/* -------- HERO — solid copper corner block + black slab ---- */
+html[data-style="bold"] .hero {
+  background: var(--bg);
+}
+html[data-style="bold"] .hero::before,
+html[data-style="bold"] .hero::after {
+  display: none; /* kill the soft circles */
+}
+/* Big copper rectangle bleeding off the right edge, behind the panel */
+html[data-style="bold"] .hero .hero-inner {
+  position: relative;
+  z-index: 1;
+}
+html[data-style="bold"] .hero {
+  position: relative;
+}
+html[data-style="bold"] .hero .hero-block-copper {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  width: 280px;
+  height: 280px;
+  background: #D66853;
+  z-index: 0;
+  transform: translateX(100%);
+  transition: transform 800ms cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
+}
+html[data-style="bold"] .hero .hero-block-black {
+  position: absolute;
+  right: 200px;
+  top: 280px;
+  width: 120px;
+  height: 16px;
+  background: #222222;
+  z-index: 0;
+  transform: translateX(220%);
+  transition: transform 800ms cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
+}
+html[data-theme="dark"][data-style="bold"] .hero .hero-block-black {
+  background: #FBFBF2;
+}
+/* Slim teal bar under the headline — real div so it can ride scroll */
+.hero-title-line { display: none; }
+html[data-style="bold"] .hero-title-line {
+  display: block;
+  width: 96px;
+  height: 8px;
+  background: #0471A6;
+  margin-top: 24px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 800ms cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-style="bold"] .hero .hero-block-copper,
+  html[data-style="bold"] .hero .hero-block-black,
+  html[data-style="bold"] .hero-title-line {
+    transition: none;
+    transform: none !important;
+  }
+}
+/* Hero panel sits cleanly on the copper block */
+html[data-style="bold"] .hero-panel {
+  border-radius: 0;
+  border-color: #222222;
+  box-shadow: 8px 8px 0 0 #222222;
+  background: var(--bg-elevated);
+}
+html[data-theme="dark"][data-style="bold"] .hero-panel {
+  box-shadow: 8px 8px 0 0 #FBFBF2;
+}
+
+/* -------- WHO — solid teal slab on the left -------------- */
+html[data-style="bold"] .who {
+  background: var(--bg);
+  border-top: 8px solid #222222;
+}
+html[data-style="bold"] .who::before {
+  display: none;
+}
+html[data-style="bold"] .who {
+  position: relative;
+  overflow: visible;
+}
+html[data-style="bold"] .who-grid {
+  position: relative;
+  z-index: 1;
+}
+html[data-style="bold"] .who-tags {
+  background: #222222;
+  border: none;
+  border-radius: 0;
+  padding: 32px;
+  box-shadow: 12px 12px 0 0 #D66853;
+}
+html[data-style="bold"] .who-tag {
+  background: transparent;
+  border-color: rgba(251,251,242,0.24);
+  color: #FBFBF2;
+}
+html[data-style="bold"] .who-tag:hover {
+  background: #D66853;
+  border-color: #D66853;
+  color: #FBFBF2;
+}
+html[data-style="bold"] .who-tag .dot {
+  background: var(--boxy-copper);
+}
+html[data-style="bold"] .who-tag:nth-child(3n+1) .dot { background: var(--teal-blue); }
+html[data-style="bold"] .who-tag:nth-child(3n+2) .dot { background: var(--floral-white); }
+html[data-style="bold"] .who-tag:nth-child(3n) .dot { background: var(--boxy-copper); }
+
+/* -------- CURRENT CLIENT — black card, copper stripe -------- */
+html[data-style="bold"] .current {
+  background: var(--bg);
+  border-top: 8px solid #222222;
+}
+html[data-style="bold"] .current-card {
+  background: #222222;
+  border: none;
+  border-radius: 0;
+  padding: 48px 56px 40px 56px;
+  position: relative;
+  box-shadow: 16px 16px 0 0 #D66853;
+}
+html[data-style="bold"] .current-card::before {
+  /* replace the thin copper stripe with a fat block */
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 32px;
+  width: 16px;
+  height: 64px;
+  background: #0471A6;
+  border-radius: 0;
+}
+html[data-style="bold"] .current-clinic {
+  color: #FBFBF2;
+}
+html[data-style="bold"] .current-meta {
+  color: rgba(251,251,242,0.72);
+}
+html[data-style="bold"] .current-body {
+  color: rgba(251,251,242,0.92);
+}
+html[data-style="bold"] .current-body-secondary {
+  color: rgba(251,251,242,0.72);
+}
+html[data-style="bold"] .current-tags span {
+  border-color: rgba(251,251,242,0.28);
+  color: rgba(251,251,242,0.85);
+  border-radius: 0;
+}
+html[data-style="bold"] .current-tags span:last-child {
+  border-color: #D66853;
+  background: #D66853;
+  color: #FBFBF2;
+}
+
+/* -------- CLOSING — keep copper bg, square the edges -------- */
+html[data-style="bold"] .closing {
+  border-top: 8px solid #222222;
+  background: #D66853;
+  color: #FBFBF2;
+}
+html[data-style="bold"] .closing h2,
+html[data-style="bold"] .closing p,
+html[data-style="bold"] .closing .eyebrow,
+html[data-style="bold"] .closing .eyebrow-row {
+  color: #FBFBF2;
+}
+html[data-style="bold"] .closing p {
+  color: rgba(251,251,242,0.92);
+}
+html[data-style="bold"] .closing-arc {
+  display: none; /* no soft arcs */
+}
+html[data-style="bold"] .closing::before,
+html[data-style="bold"] .closing::after {
+  /* Real divs replace pseudo blocks for scroll-driven motion */
+  display: none;
+}
+
+/* Charcoal slab — bottom-left, slides in from left as you scroll into the section */
+.closing-block-charcoal {
+  display: none;
+}
+html[data-style="bold"] .closing-block-charcoal {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  height: 24px;
+  background: #222222;
+  z-index: 0;
+  transform: translateX(-100%);
+  transition: transform 800ms cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
+}
+
+/* Teal bar — top-right, slides down from top as you scroll into the section */
+.closing-block-teal {
+  display: none;
+}
+html[data-style="bold"] .closing-block-teal {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 180px;
+  background: #0471A6;
+  z-index: 0;
+  transform: translateY(-100%);
+  transition: transform 800ms cubic-bezier(.16, 1, .3, 1);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-style="bold"] .closing-block-charcoal,
+  html[data-style="bold"] .closing-block-teal {
+    transition: none;
+    transform: none !important;
+  }
+}
+html[data-style="bold"] .closing-actions .btn-primary {
+  border-radius: 0;
+  background: #222222;
+  color: #FBFBF2;
+  box-shadow: 6px 6px 0 0 #FBFBF2;
+}
+html[data-style="bold"] .closing-actions .btn-primary:hover {
+  background: #FBFBF2;
+  color: #222222;
+  transform: translateY(-1px);
+}
+html[data-style="bold"] .closing-actions .btn-primary .arrow {
+  color: inherit;
+}
+
+/* -------- NAV — square button + thicker bottom rule -------- */
+html[data-style="bold"] .nav .btn-primary {
+  border-radius: 0;
+  box-shadow: 4px 4px 0 0 #222222;
+}
+html[data-style="bold"] .nav .btn-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 #222222;
+}
+
+/* -------- BUTTONS GLOBAL — flatten radii in bold mode ----- */
+html[data-style="bold"] .btn,
+html[data-style="bold"] .btn-primary,
+html[data-style="bold"] .btn-ghost,
+html[data-style="bold"] .btn-on-dark {
+  border-radius: 0 !important;
+}
+
+/* -------- CURRENT CTA button — chunky copper with shadow -- */
+html[data-style="bold"] .current-cta .btn-primary {
+  box-shadow: 6px 6px 0 0 #222222;
+}
+html[data-style="bold"] .current-cta .btn-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 #222222;
+}
+
+/* -------- HERO actions — chunky shadow on primary CTA --- */
+html[data-style="bold"] .hero-actions .btn-primary {
+  box-shadow: 6px 6px 0 0 #222222;
+}
+html[data-style="bold"] .hero-actions .btn-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 #222222;
+}
+
+/* Dark mode — flip the chunky shadow color so it's visible on dark bg */
+html[data-theme="dark"][data-style="bold"] .nav .btn-primary {
+  box-shadow: 4px 4px 0 0 #FBFBF2;
+}
+html[data-theme="dark"][data-style="bold"] .nav .btn-primary:hover {
+  box-shadow: 2px 2px 0 0 #FBFBF2;
+}
+html[data-theme="dark"][data-style="bold"] .current-cta .btn-primary,
+html[data-theme="dark"][data-style="bold"] .hero-actions .btn-primary {
+  box-shadow: 6px 6px 0 0 #FBFBF2;
+}
+html[data-theme="dark"][data-style="bold"] .current-cta .btn-primary:hover,
+html[data-theme="dark"][data-style="bold"] .hero-actions .btn-primary:hover {
+  box-shadow: 2px 2px 0 0 #FBFBF2;
+}
+/* Who tags + current card: the copper drop-shadow is fine in both modes */

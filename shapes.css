@@ -1,0 +1,135 @@
+/* ============================================================
+   SHAPES OVERLAY — only active when html[data-style="shapes"]
+   Uses the brand-shape vocabulary from the design system:
+   smile-arc, half-dome, ring, disk, wedge, pulse-line, etc.
+   One shape per composition. Copper / Teal / Carbon only.
+   ============================================================ */
+
+/* The shape svgs are absolutely positioned children of each
+   section. Hidden by default; only shown in shapes mode. */
+.shape-deco { display: none; pointer-events: none; }
+html[data-style="shapes"] .shape-deco { display: block; position: absolute; }
+
+/* Keep section content above the decoration */
+html[data-style="shapes"] .hero,
+html[data-style="shapes"] .who,
+html[data-style="shapes"] .current,
+html[data-style="shapes"] .closing { position: relative; overflow: hidden; }
+
+html[data-style="shapes"] .hero-inner,
+html[data-style="shapes"] .who-grid,
+html[data-style="shapes"] .current-inner,
+html[data-style="shapes"] .closing-inner { position: relative; z-index: 2; }
+
+/* -------- HERO — smile arc + disk + ring --------------- */
+html[data-style="shapes"] .hero::before,
+html[data-style="shapes"] .hero::after { display: none; }
+
+html[data-style="shapes"] .hero-shape-smile {
+  display: none;
+}
+html[data-style="shapes"] .hero .shape-smile {
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -120px;
+  transform: translateX(-50%);
+  width: min(1280px, 110%);
+  height: auto;
+  z-index: 0;
+}
+html[data-style="shapes"] .hero .shape-disk {
+  position: absolute;
+  right: 6%;
+  top: 110px;
+  width: 96px;
+  height: 96px;
+  z-index: 1;
+}
+html[data-style="shapes"] .hero .shape-ring {
+  position: absolute;
+  right: 14%;
+  top: 80px;
+  width: 140px;
+  height: 140px;
+  z-index: 0;
+}
+html[data-style="shapes"] .hero-title .accent {
+  /* keep accent italic but layer a thin underline arc */
+  position: relative;
+}
+
+/* -------- WHO — half-dome anchoring the bottom --------- */
+html[data-style="shapes"] .who::before { display: none; }
+html[data-style="shapes"] .who .shape-halfdome {
+  position: absolute;
+  left: -80px;
+  bottom: -1px;
+  width: 420px;
+  height: auto;
+  z-index: 0;
+  opacity: 0.06;
+}
+html[data-style="shapes"] .who .shape-pulse {
+  position: absolute;
+  right: 6%;
+  top: 64px;
+  width: 220px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+/* -------- CURRENT — wedge + ring -------- */
+html[data-style="shapes"] .current .shape-wedge {
+  position: absolute;
+  left: -60px;
+  top: 60px;
+  width: 200px;
+  height: 200px;
+  z-index: 0;
+  opacity: 0.9;
+}
+html[data-style="shapes"] .current .shape-ring-lg {
+  position: absolute;
+  right: 4%;
+  bottom: 80px;
+  width: 220px;
+  height: 220px;
+  z-index: 0;
+}
+
+/* -------- CLOSING — giant white smile across copper --- */
+html[data-style="shapes"] .closing-arc { display: none; }
+html[data-style="shapes"] .closing .shape-smile-light {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  width: min(1600px, 130%);
+  height: auto;
+  z-index: 0;
+  opacity: 0.18;
+}
+html[data-style="shapes"] .closing .shape-disk-light {
+  position: absolute;
+  left: 8%;
+  top: 14%;
+  width: 80px;
+  height: 80px;
+  z-index: 0;
+  opacity: 0.85;
+}
+html[data-style="shapes"] .closing .shape-ring-light {
+  position: absolute;
+  right: 6%;
+  bottom: 12%;
+  width: 120px;
+  height: 120px;
+  z-index: 0;
+}
+
+/* Subtle hover lift on the smile arc to feel alive */
+html[data-style="shapes"] .hero .shape-smile path {
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}

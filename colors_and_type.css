@@ -1,0 +1,266 @@
+/* =========================================================================
+   Salsa Systems — colors_and_type.css
+   Import this first in any new artifact:
+     <link rel="stylesheet" href="colors_and_type.css">
+   ========================================================================= */
+
+/* -------- Fonts -------- */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* -------- Tokens -------- */
+:root {
+  /* Brand colors — the full palette. Do not introduce new hues. */
+  --parchment:       #F4F3EE;   /* primary background */
+  --floral-white:    #FBFBF2;   /* secondary surface */
+  --carbon-black:    #222222;   /* text + chrome */
+  --boxy-copper:     #D66853;   /* primary accent */
+  --teal-blue:       #0471A6;   /* secondary accent */
+
+  /* Accent variants (darker / lighter) for hover + press only. */
+  --copper-700:      #B8512F;
+  --copper-300:      #E28F78;
+  --teal-700:        #035C87;
+  --teal-300:        #3A92BE;
+
+  /* Ink scale — all derived from Carbon Black with alpha */
+  --ink-100:         rgba(34, 34, 34, 1.00);
+  --ink-80:          rgba(34, 34, 34, 0.80);
+  --ink-60:          rgba(34, 34, 34, 0.60);
+  --ink-40:          rgba(34, 34, 34, 0.40);
+  --ink-20:          rgba(34, 34, 34, 0.20);
+  --ink-12:          rgba(34, 34, 34, 0.12);
+  --ink-08:          rgba(34, 34, 34, 0.08);
+  --ink-04:          rgba(34, 34, 34, 0.04);
+
+  /* Semantic colors */
+  --bg:              var(--parchment);
+  --bg-elevated:     var(--floral-white);
+  --bg-inverse:      var(--carbon-black);
+
+  --fg:              var(--ink-100);       /* body text */
+  --fg-muted:        var(--ink-60);        /* captions, metadata */
+  --fg-subtle:       var(--ink-40);        /* placeholder, disabled */
+  --fg-inverse:      var(--floral-white);  /* on dark backgrounds */
+
+  --border:          var(--ink-08);        /* default hairline */
+  --border-strong:   var(--ink-20);
+  --border-focus:    var(--teal-blue);
+
+  --accent:          var(--boxy-copper);
+  --accent-hover:    var(--copper-700);
+  --accent-fg:       var(--floral-white);  /* text on copper */
+  --accent-2:        var(--teal-blue);
+  --accent-2-hover:  var(--teal-700);
+  --accent-2-fg:     var(--floral-white);
+
+  /* Type families */
+  --font-serif:      'Libre Caslon Text', 'Iowan Old Style', Georgia, serif;
+  --font-sans:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono:       'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Type scale (px values given for reference, use tokens) */
+  --fs-display:      72px;   /* hero h1 */
+  --fs-h1:           56px;
+  --fs-h2:           40px;
+  --fs-h3:           28px;
+  --fs-h4:           20px;
+  --fs-lg:           18px;
+  --fs-body:         16px;
+  --fs-sm:           14px;
+  --fs-xs:           12px;
+
+  --lh-display:      1.05;
+  --lh-heading:      1.15;
+  --lh-body:         1.55;
+  --lh-tight:        1.25;
+
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+
+  /* Spacing scale (4px base) */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  24px;
+  --sp-6:  32px;
+  --sp-7:  48px;
+  --sp-8:  64px;
+  --sp-9:  96px;
+  --sp-10: 128px;
+
+  /* Radii */
+  --radius-sm: 2px;   /* inputs, buttons */
+  --radius-md: 6px;   /* small cards, chips */
+  --radius-lg: 12px;  /* cards, modals */
+  --radius-xl: 20px;  /* feature blocks */
+
+  /* Shadows — nearly invisible */
+  --shadow-sm: 0 1px 2px rgba(34, 34, 34, 0.06);
+  --shadow-md: 0 2px 8px rgba(34, 34, 34, 0.08);
+  --shadow-lg: 0 8px 24px rgba(34, 34, 34, 0.10);
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:    160ms;
+  --dur-med:     280ms;
+  --dur-slow:    480ms;
+
+  /* Layout */
+  --content-max:    1200px;
+  --content-narrow: 960px;
+  --nav-height:     72px;
+}
+
+/* -------- Base reset + body -------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+/* -------- Semantic type -------- */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, .display {
+  font-family: var(--font-serif);
+  color: var(--fg);
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+.display { font-size: var(--fs-display); line-height: var(--lh-display); letter-spacing: -0.025em; }
+h1, .h1 { font-size: var(--fs-h1);   line-height: var(--lh-display); }
+h2, .h2 { font-size: var(--fs-h2);   line-height: var(--lh-heading); }
+h3, .h3 { font-size: var(--fs-h3);   line-height: var(--lh-heading); font-weight: 500; }
+h4, .h4 { font-size: var(--fs-h4);   line-height: var(--lh-tight);
+          font-family: var(--font-sans); font-weight: 600; letter-spacing: 0; }
+
+p, .p {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg);
+  margin: 0 0 var(--sp-4) 0;
+  text-wrap: pretty;
+}
+p.lead, .lead {
+  font-size: var(--fs-lg);
+  line-height: 1.5;
+  color: var(--ink-80);
+}
+small, .caption {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--fg-muted);
+  line-height: 1.45;
+}
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--fg-muted);
+}
+code, kbd, pre, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 2px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: var(--sp-7) 0;
+}
+
+::selection {
+  background: var(--boxy-copper);
+  color: var(--floral-white);
+}
+
+/* -------- Buttons (shared by preview cards + ui kit) -------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1;
+  padding: 14px 22px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-in-out),
+              color      var(--dur-fast) var(--ease-in-out),
+              border-color var(--dur-fast) var(--ease-in-out),
+              transform  var(--dur-fast) var(--ease-in-out);
+  user-select: none;
+  text-decoration: none;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--teal-blue);
+  outline-offset: 2px;
+}
+.btn-primary {
+  background: var(--boxy-copper);
+  color: var(--floral-white);
+}
+.btn-primary:hover  { background: var(--copper-700); }
+.btn-primary:active { background: var(--copper-700); transform: translateY(1px); }
+
+.btn-secondary {
+  background: var(--teal-blue);
+  color: var(--floral-white);
+}
+.btn-secondary:hover  { background: var(--teal-700); }
+.btn-secondary:active { background: var(--teal-700); transform: translateY(1px); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--carbon-black);
+  border-color: var(--ink-20);
+}
+.btn-ghost:hover  { background: var(--ink-04); }
+.btn-ghost:active { background: var(--ink-08); transform: translateY(1px); }
+
+.btn-link {
+  background: transparent;
+  color: var(--carbon-black);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--carbon-black);
+  border-radius: 0;
+}
+.btn-link:hover { color: var(--boxy-copper); border-color: var(--boxy-copper); }
+
+/* -------- Cards -------- */
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
