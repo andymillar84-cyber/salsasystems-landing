@@ -1,91 +1,327 @@
-<!doctype html>
-<html lang="en" data-theme="light" data-style="bold">
+<!DOCTYPE html>
+<html lang="en-AU">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Salsa Systems — AI for Allied Health Clinics</title>
-<meta name="description" content="Salsa Systems builds AI tools for allied health clinics — less admin, more patients. Book a free discovery call.">
-<meta name="keywords" content="Salsa Systems, AI allied health, clinic AI, allied health software, clinic automation, Andrew Millar">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salsa Systems | More Pool Builds for Australian Pool Builders</title>
+<meta name="description" content="Facebook ads and instant lead follow-up for Australian pool builders. More enquiries, faster replies, more site visits booked. Run by Andrew Millar, Northern Rivers NSW.">
 <link rel="canonical" href="https://salsasystems.com.au/">
 <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
-<meta property="og:title" content="Salsa Systems — AI for Allied Health Clinics">
-<meta property="og:description" content="Less admin. More patients. AI tools built specifically for allied health clinics.">
-<meta property="og:url" content="https://salsasystems.com.au/">
+<meta property="og:title" content="Salsa Systems | More Pool Builds for Pool Builders">
+<meta property="og:description" content="Facebook ads + instant follow-up that turns pool enquiries into booked site visits.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://salsasystems.com.au/">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Salsa Systems",
-  "url": "https://salsasystems.com.au",
-  "description": "AI tools for allied health clinics — less admin, more patients.",
-  "areaServed": "AU",
-  "founder": "Andrew Millar"
-}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Salsa Systems","url":"https://salsasystems.com.au/","telephone":"+61490069353","email":"andrew@salsasystems.com.au","founder":{"@type":"Person","name":"Andrew Riascos Millar"},"areaServed":"AU","address":{"@type":"PostalAddress","addressRegion":"NSW","addressCountry":"AU"},"description":"Facebook ads and instant lead follow-up for pool builders."}
 </script>
-<link rel="stylesheet" href="colors_and_type.css">
-<link rel="stylesheet" href="styles.css?v=7">
-<link rel="stylesheet" href="bold.css?v=5">
-<link rel="stylesheet" href="shapes.css?v=1">
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+:root{
+  --deep:#04202f;
+  --pool:#0a4d68;
+  --aqua:#19c3d6;
+  --aqua-soft:#8ee6ef;
+  --tile:#0e7fa6;
+  --coping:#f4efe6;
+  --sand:#e6dccb;
+  --sun:#ffb703;
+  --sun-dark:#f59e0b;
+  --ink:#0b1f2a;
+  --muted:#51707f;
+  --white:#fff;
+  --display:'Bricolage Grotesque',sans-serif;
+  --body:'Figtree',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--coping);font-size:1.08rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* nav */
+.nav{position:absolute;top:0;left:0;right:0;z-index:20}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--white);text-decoration:none;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.brand i{width:14px;height:14px;border-radius:3px;background:var(--aqua);box-shadow:0 0 0 3px rgba(25,195,214,.25);display:inline-block}
+.nav a.pill{color:var(--deep);background:var(--sun);text-decoration:none;font-weight:700;padding:10px 18px;border-radius:999px;font-size:.98rem;white-space:nowrap;transition:transform .2s,background .2s}
+.nav a.pill:hover{background:var(--sun-dark);transform:translateY(-1px)}
+
+/* hero: the pool */
+.hero{position:relative;overflow:hidden;color:var(--white);background:
+  radial-gradient(120% 80% at 80% 0%,#0f6f8f 0%,transparent 60%),
+  linear-gradient(180deg,#0a5876 0%,var(--pool) 40%,var(--deep) 100%);
+  padding:150px 0 120px}
+.caustics{position:absolute;inset:-20%;pointer-events:none;opacity:.35;mix-blend-mode:screen;
+  background:
+   radial-gradient(closest-side,rgba(142,230,239,.55),transparent) 0 0/180px 120px,
+   radial-gradient(closest-side,rgba(142,230,239,.35),transparent) 90px 60px/220px 150px;
+  filter:blur(6px);animation:drift 18s linear infinite}
+.caustics.b{opacity:.22;animation-duration:27s;animation-direction:reverse;background-size:260px 170px,140px 110px}
+@keyframes drift{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(-180px,-120px,0) rotate(4deg)}}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua-soft);margin-bottom:22px}
+.eyebrow:before{content:"";width:28px;height:2px;background:var(--aqua)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2.6rem,7.4vw,5.6rem);line-height:.95;letter-spacing:-.035em;max-width:14ch}
+h1 em{font-style:normal;color:var(--aqua);position:relative;white-space:nowrap}
+h1 em:after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.12em;background:var(--sun);border-radius:2px;transform-origin:left;animation:line 1s .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.lede{font-size:clamp(1.12rem,2.2vw,1.35rem);max-width:40ch;margin:26px 0 36px;color:#d6eef3}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:1.1rem;padding:16px 26px;border-radius:12px;transition:transform .2s,background .2s,box-shadow .2s}
+.btn.primary{background:var(--sun);color:var(--deep);box-shadow:0 10px 30px -10px rgba(255,183,3,.7)}
+.btn.primary:hover{transform:translateY(-2px);background:var(--sun-dark)}
+.btn.ghost{color:var(--white);border:2px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{border-color:var(--aqua);color:var(--aqua-soft)}
+.hero-note{margin-top:22px;font-size:.95rem;color:#9cc6d2}
+.rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.rise.d1{animation-delay:.1s}.rise.d2{animation-delay:.22s}.rise.d3{animation-delay:.34s}.rise.d4{animation-delay:.46s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+/* waterline tile band */
+.waterline{height:34px;background:
+  linear-gradient(90deg,transparent 0 1px,var(--coping) 1px 2px,transparent 2px) 0 0/34px 34px,
+  linear-gradient(0deg,transparent 0 1px,var(--coping) 1px 2px,transparent 2px) 0 0/34px 17px,
+  conic-gradient(var(--tile) 25%,var(--aqua) 0 50%,var(--tile) 0 75%,#0b6c8e 0) 0 0/34px 34px;
+  border-bottom:10px solid var(--sand)}
+
+section{padding:96px 0}
+.kicker{font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tile);margin-bottom:14px}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.6vw,3.3rem);line-height:1;letter-spacing:-.03em;max-width:18ch;margin-bottom:22px}
+.sub{color:var(--muted);max-width:58ch;font-size:1.12rem}
+
+/* problem */
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.leaks{list-style:none;display:grid;gap:14px}
+.leaks li{background:var(--white);border-radius:14px;padding:18px 20px 18px 56px;position:relative;box-shadow:0 1px 0 var(--sand),0 12px 30px -24px rgba(4,32,47,.5)}
+.leaks li:before{content:"";position:absolute;left:20px;top:22px;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--aqua-soft),var(--tile))}
+.leaks b{display:block;font-family:var(--display);font-size:1.15rem;letter-spacing:-.01em}
+.leaks span{color:var(--muted);font-size:1rem}
+
+/* reframe */
+.reframe{background:var(--deep);color:var(--white);position:relative;overflow:hidden}
+.reframe h2{color:var(--white);max-width:20ch}
+.reframe h2 em{font-style:normal;color:var(--aqua)}
+.reframe .sub{color:#a9cbd6}
+.clock{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.clock div{border:1px solid rgba(142,230,239,.2);border-radius:18px;padding:26px;background:linear-gradient(180deg,rgba(25,195,214,.08),transparent)}
+.clock strong{font-family:var(--display);font-size:clamp(2.4rem,5vw,3.4rem);line-height:1;color:var(--aqua);display:block;letter-spacing:-.03em}
+.clock p{color:#cfe6ec;margin-top:10px;font-size:1rem}
+
+/* how */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;counter-reset:s}
+.step{background:var(--white);border-radius:20px;padding:30px 26px;position:relative;border-top:6px solid var(--aqua);box-shadow:0 18px 40px -30px rgba(4,32,47,.55)}
+.step:before{counter-increment:s;content:"0" counter(s);font-family:var(--display);font-weight:800;font-size:3rem;color:var(--sand);position:absolute;right:20px;top:10px;line-height:1}
+.step h3{font-family:var(--display);font-size:1.45rem;letter-spacing:-.02em;margin-bottom:10px;max-width:14ch}
+.step p{color:var(--muted);font-size:1.02rem}
+
+/* math */
+.math{background:var(--sand)}
+.funnel{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px -30px rgba(4,32,47,.6)}
+.funnel div{padding:28px 22px;color:var(--white)}
+.funnel div:nth-child(1){background:#0e7fa6}
+.funnel div:nth-child(2){background:#0a6688}
+.funnel div:nth-child(3){background:#0a4d68}
+.funnel div:nth-child(4){background:var(--deep)}
+.funnel strong{font-family:var(--display);font-size:clamp(1.8rem,3.6vw,2.6rem);display:block;line-height:1;letter-spacing:-.03em}
+.funnel div:nth-child(4) strong{color:var(--sun)}
+.funnel span{display:block;margin-top:8px;color:#d6eef3;font-size:.98rem}
+.fine{margin-top:16px;color:var(--muted);font-size:.92rem}
+
+/* fit */
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.fit div{border-radius:18px;padding:28px}
+.fit .yes{background:var(--white);border:2px solid var(--aqua)}
+.fit .no{background:transparent;border:2px dashed #c9bda7}
+.fit h3{font-family:var(--display);font-size:1.3rem;margin-bottom:12px}
+.fit ul{margin-left:20px;color:var(--muted)}
+.fit li{margin-bottom:8px}
+
+/* about */
+.about{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;background:var(--white);border-radius:24px;padding:40px;box-shadow:0 20px 50px -34px rgba(4,32,47,.6)}
+.mono{width:110px;height:110px;border-radius:24px;background:linear-gradient(135deg,var(--aqua),var(--tile));display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:2.4rem;color:var(--white)}
+.about p{color:var(--muted);margin-top:8px}
+
+/* final cta */
+.final{background:linear-gradient(180deg,var(--pool),var(--deep));color:var(--white);text-align:center;position:relative;overflow:hidden}
+.final h2{color:var(--white);margin:0 auto 18px;max-width:16ch}
+.final .sub{color:#b7d8e1;margin:0 auto 34px}
+.final .ctas{justify-content:center}
+
+footer{background:var(--deep);color:#7fa3b1;padding:28px 0;font-size:.95rem;border-top:1px solid #0e3448}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{color:#a9cbd6;text-decoration:none}
+footer a:hover{color:var(--aqua)}
+
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+
+@media(max-width:860px){
+  section{padding:72px 0}
+  .split,.fit{grid-template-columns:1fr;gap:28px}
+  .clock,.steps{grid-template-columns:1fr}
+  .funnel{grid-template-columns:1fr 1fr}
+  .about{grid-template-columns:1fr;padding:28px}
+  .hero{padding:120px 0 90px}
+}
+@media(max-width:420px){
+  .nav a.pill{padding:9px 14px;font-size:.9rem}
+  .brand{font-size:1.1rem}
+  .btn{width:100%;justify-content:center}
+  .funnel{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .caustics,.rise,h1 em:after{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
 </head>
 <body>
-<div id="root"></div>
 
-<script type="text/babel" src="components/LogoMark.jsx"></script>
-<script type="text/babel" src="components/Shapes.jsx"></script>
-<script type="text/babel" src="components/Nav.jsx"></script>
-<script type="text/babel" src="components/Hero.jsx"></script>
-<script type="text/babel" src="components/Who.jsx"></script>
-<script type="text/babel" src="components/CurrentClient.jsx"></script>
-<script type="text/babel" src="components/Closing.jsx"></script>
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
-<script src="reveal.js"></script>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/"><i></i>Salsa Systems</a>
+    <a class="pill" href="tel:0490069353">Call 0490 069 353</a>
+  </div>
+</header>
 
-<script type="text/babel">
-  const App = () => {
-    const [theme, setThemeState] = React.useState('light');
+<section class="hero">
+  <div class="caustics"></div>
+  <div class="caustics b"></div>
+  <div class="wrap">
+    <div class="eyebrow rise">For Australian pool builders</div>
+    <h1 class="rise d1">More pool builds. <em>Booked for you.</em></h1>
+    <p class="lede rise d2">I run your Facebook ads and reply to every enquiry within seconds, so more people who ask about a pool end up standing in their backyard with you.</p>
+    <div class="ctas rise d3">
+      <a class="btn primary" href="tel:0490069353">Book a 15-min call</a>
+      <a class="btn ghost" href="#how">See how it works</a>
+    </div>
+    <p class="hero-note rise d4">Straight answers from Andrew. No lock-in contracts, no jargon.</p>
+  </div>
+</section>
+<div class="waterline" aria-hidden="true"></div>
 
-    const setTheme = (t) => {
-      setThemeState(t);
-      document.documentElement.setAttribute('data-theme', t);
-    };
+<section>
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="kicker">The problem</div>
+      <h2>You don't need more "leads". You need more site visits.</h2>
+      <p class="sub">Most pool builders have tried ads, or been burnt by an agency. The ads get clicks, the phone rings a bit, and the jobs don't follow. That's rarely the ad's fault.</p>
+    </div>
+    <ul class="leaks reveal">
+      <li><b>Enquiries sit for hours</b><span>You're on site, on the tools. By the time you ring back they've called two other builders.</span></li>
+      <li><b>Tyre-kickers eat your evenings</b><span>People with a $20k budget asking about a $90k pool.</span></li>
+      <li><b>Nobody follows up twice</b><span>Half of the people who'd buy just needed a second nudge.</span></li>
+      <li><b>You can't see what's working</b><span>Spend goes out, and there's no clear line to signed contracts.</span></li>
+    </ul>
+  </div>
+</section>
 
-    const openBooking = React.useCallback(() => {
-      if (window.Calendly && window.Calendly.initPopupWidget) {
-        window.Calendly.initPopupWidget({
-          url: 'https://calendly.com/andrew-salsasystems/30min',
-          pageSettings: {
-            hideEventTypeDetails: false,
-            hideLandingPageDetails: false,
-            hideGdprBanner: true,
-            backgroundColor: theme === 'dark' ? '0E0C09' : 'FBFBF2',
-            textColor: theme === 'dark' ? 'F0EEE4' : '222222',
-            primaryColor: 'D66853',
-          },
-        });
-      } else {
-        window.open('https://calendly.com/andrew-salsasystems/30min', '_blank', 'noopener');
-      }
-    }, [theme]);
+<section class="reframe">
+  <div class="wrap">
+    <div class="kicker" style="color:var(--aqua-soft)">The fix</div>
+    <h2 class="reveal">Ads aren't the problem. <em>Slow follow-up is.</em></h2>
+    <p class="sub reveal">A pool is a big, emotional purchase. The builder who answers first, and keeps showing up, usually gets the site visit. So that's what I set up.</p>
+    <div class="clock">
+      <div class="reveal"><strong>&lt;60 sec</strong><p>Every enquiry gets a text reply straight away, day or night, from your business number.</p></div>
+      <div class="reveal"><strong>4 questions</strong><p>Budget, timing, suburb and pool type are asked up front, so you only chase serious buyers.</p></div>
+      <div class="reveal"><strong>1 calendar</strong><p>Qualified people book a site visit straight into your calendar. Reminders go out automatically.</p></div>
+    </div>
+  </div>
+</section>
 
-    return (
-      <div className="shell">
-        <SalsaNav onBook={openBooking} theme={theme} setTheme={setTheme} logoOutline="thick-dark" />
-        <SalsaHero onBook={openBooking} headline={"Less admin.\nMore patients."} ctaLabel="Steal 20 minutes of our time" />
-        <SalsaWho onBook={openBooking} />
-        <SalsaCurrentClient onBook={openBooking} />
-        <SalsaClosing onBook={openBooking} />
-        <SalsaFooter logoOutline="thick-dark" />
+<section id="how">
+  <div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2 class="reveal">Three pieces, set up for you.</h2>
+    <p class="sub reveal">You keep building pools. I handle the ads, the follow-up and the reporting.</p>
+    <div class="steps">
+      <div class="step reveal"><h3>Facebook &amp; Instagram ads</h3><p>Ads built around your finished pools and your service area, aimed at homeowners who can actually afford a build.</p></div>
+      <div class="step reveal"><h3>Instant follow-up</h3><p>Every enquiry lands in one inbox, gets an instant reply and a few friendly follow-ups, so nobody slips through.</p></div>
+      <div class="step reveal"><h3>Booked site visits</h3><p>Serious buyers pick a time in your calendar. You get a text with their details and answers before you show up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="math">
+  <div class="wrap">
+    <div class="kicker">The maths</div>
+    <h2 class="reveal">One extra pool pays for a lot of ads.</h2>
+    <p class="sub reveal">Pools are high-ticket. You don't need hundreds of jobs, just a few more of the right ones each season.</p>
+    <div class="funnel reveal">
+      <div><strong>$2,000</strong><span>ad spend for the month</span></div>
+      <div><strong>40</strong><span>enquiries</span></div>
+      <div><strong>8</strong><span>site visits booked</span></div>
+      <div><strong>1&ndash;2</strong><span>pools signed at $70k+ each</span></div>
+    </div>
+    <p class="fine">Illustration only, not a promise. Real numbers depend on your area, prices and how fast you quote. We'll work out your own numbers on the call.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">Is this for you?</div>
+    <h2 class="reveal">Built for builders who can take on more work.</h2>
+    <div class="fit">
+      <div class="yes reveal">
+        <h3>Good fit</h3>
+        <ul>
+          <li>You build in-ground concrete or fibreglass pools</li>
+          <li>You could take on 1&ndash;3 more builds a month</li>
+          <li>Most of your work comes from word of mouth right now</li>
+          <li>You want enquiries handled so you can stay on the tools</li>
+        </ul>
       </div>
-    );
-  };
+      <div class="no reveal">
+        <h3>Probably not a fit</h3>
+        <ul>
+          <li>You're booked out for the next 12 months</li>
+          <li>You only do pool cleaning or maintenance</li>
+          <li>You're after the cheapest possible ad agency</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-  root.render(<App />);
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="about reveal">
+      <div class="mono">AM</div>
+      <div>
+        <div class="kicker" style="margin-bottom:6px">Who you'll deal with</div>
+        <h3 style="font-family:var(--display);font-size:1.7rem;letter-spacing:-.02em">G'day, I'm Andrew Millar.</h3>
+        <p>I'm based in the Northern Rivers, NSW, and I run Salsa Systems. I set up Facebook ads and lead follow-up systems for local trades and service businesses, and I run the same setup for my own trade business. You deal with me directly, not an account manager.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="caustics b"></div>
+  <div class="wrap" style="position:relative;z-index:2">
+    <h2 class="reveal">Let's see if the numbers work for you.</h2>
+    <p class="sub reveal">A 15-minute call. I'll look at your area, your average build and what you're doing now, and tell you straight whether ads make sense.</p>
+    <div class="ctas reveal">
+      <a class="btn primary" href="tel:0490069353">Call or text 0490 069 353</a>
+      <a class="btn ghost" href="mailto:andrew@salsasystems.com.au?subject=Pool%20builder%20enquiry">Email Andrew</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Salsa Systems &middot; ABN 20 588 929 132</span>
+    <span><a href="/privacy">Privacy policy</a> &nbsp;&middot;&nbsp; <a href="tel:0490069353">0490 069 353</a></span>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 </script>
 </body>
 </html>
